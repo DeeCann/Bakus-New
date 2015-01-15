@@ -13,7 +13,9 @@ public class CrossRoad : MonoBehaviour {
 		StartCoroutine("ShowTexture");
 		transform.GetChild(0).animation.PlayQueued("CrossRoadsArrowUp", QueueMode.CompleteOthers);
 		transform.GetChild(0).animation.PlayQueued("CrossRoadsArrowFlow", QueueMode.CompleteOthers);
-		transform.rotation = Quaternion.LookRotation( transform.parent.position - playerCurrentField.transform.position, transform.parent.up );
+		transform.LookAt ( new Vector3(playerCurrentField.transform.position.x,transform.position.y, playerCurrentField.transform.position.z ), transform.parent.up);
+
+		//transform.rotation = Quaternion.LookRotation( transform.parent.position + playerCurrentField.transform.position, transform.parent.up );
 	}
 
 	public void DectivateRouteArrow() {

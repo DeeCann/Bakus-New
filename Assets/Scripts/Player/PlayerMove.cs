@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour {
 
 	private bool _hasNewMove = false;
 	private Vector3 _nextField = Vector3.zero;
-	private Quaternion lookAtRotation = Quaternion.identity;
+	private Quaternion lookAtRotation = Quaternion.AngleAxis(180, Vector3.up);
 
 	void Awake() {
 		// isKinematic must be blocked on hills to stop character from slide down
