@@ -8,4 +8,6 @@ public class Tags : MonoBehaviour {
 
 	public const string Player = "Player";
 	public const string PlayerContextMenu = "PlayerContextMenu";
+
+	public const string HUDControler = "HUDControler";
 }

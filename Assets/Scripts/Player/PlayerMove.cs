@@ -35,7 +35,7 @@ public class PlayerMove : MonoBehaviour {
 				Dice.CanDoDiceRoll = true;
 			}
 
-			transform.position = Vector3.MoveTowards(transform.position, _nextField, Time.deltaTime * 0.4f);
+			transform.position = Vector3.MoveTowards(transform.position, _nextField, Time.deltaTime * 0.6f);
 		} else {
 			transform.rotation = lookAtRotation;
 			rigidbody.isKinematic = true;

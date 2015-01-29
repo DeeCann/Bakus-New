@@ -7,7 +7,7 @@ public class HUD : MonoBehaviour {
 	public Transform _pauseButtonSprite;
 	public Transform _playButtonSprite;
 	public Transform _cardsPanel;
-	public Transform _tipsPanel;
+	public Transform _startFruitsAmountPanel;
 
 	private bool _gameIsPaused = false;	
 
@@ -39,12 +39,24 @@ public class HUD : MonoBehaviour {
 
 	public void ShowTip() {
 		_vigniete.gameObject.SetActive (true);
-		_tipsPanel.gameObject.SetActive (true);
+		_startFruitsAmountPanel.gameObject.SetActive (true);
 		StartCoroutine (ShowVigniete ());
 		StartCoroutine (ShowTipsPanelCorutine ());
 	}
 
 	public void CloseTip() {
+		StartCoroutine (HideVigniete ());
+		StartCoroutine (HideTipsPanelCorutine ());
+	}
+
+	public void ShowStartFruitsAmount() {
+		_vigniete.gameObject.SetActive (true);
+		_startFruitsAmountPanel.gameObject.SetActive (true);
+		StartCoroutine (ShowVigniete ());
+		StartCoroutine (ShowTipsPanelCorutine ());
+	}
+	
+	public void CloseStartFruitsAmount() {
 		StartCoroutine (HideVigniete ());
 		StartCoroutine (HideTipsPanelCorutine ());
 	}
@@ -89,29 +101,29 @@ public class HUD : MonoBehaviour {
 	}
 
 	IEnumerator ShowTipsPanelCorutine() {
-		float _tipsPanelAlpha = _tipsPanel.GetComponent<CanvasGroup> ().alpha;
+		float _tipsPanelAlpha = _startFruitsAmountPanel.GetComponent<CanvasGroup> ().alpha;
 		
 		while (_tipsPanelAlpha < 0.99f) {
 			_tipsPanelAlpha += 0.16f;
-			_tipsPanel.GetComponent<CanvasGroup> ().alpha = _tipsPanelAlpha;
+			_startFruitsAmountPanel.GetComponent<CanvasGroup> ().alpha = _tipsPanelAlpha;
 			yield return null;
 		}
 
-		foreach(Transform fruit in _tipsPanel.FindChild("FruitsAmountTexts").transform)
+		foreach(Transform fruit in _startFruitsAmountPanel.FindChild("FruitsAmountTexts").transform)
 			fruit.GetComponent<Text>().text = Game._fruitsInGame[fruit.name].ToString();
 		
 	}
 
 	IEnumerator HideTipsPanelCorutine() {
-		float _tipsPanelAlpha = _tipsPanel.GetComponent<CanvasGroup> ().alpha;
+		float _tipsPanelAlpha = _startFruitsAmountPanel.GetComponent<CanvasGroup> ().alpha;
 		
 		while (_tipsPanelAlpha < 0.99f) {
 			_tipsPanelAlpha += 0.16f;
-			_tipsPanel.GetComponent<CanvasGroup> ().alpha = _tipsPanelAlpha;
+			_startFruitsAmountPanel.GetComponent<CanvasGroup> ().alpha = _tipsPanelAlpha;
 			yield return null;
 		}
 
-		_tipsPanel.gameObject.SetActive (false);
+		_startFruitsAmountPanel.gameObject.SetActive (false);
 	}
 
 }

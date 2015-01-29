@@ -6,19 +6,25 @@ public class CrossRoadArrow : MonoBehaviour {
 	private GameObject _myParentCharacter;
 	private GameObject _myParentField;
 
+	private bool _listenForClickAction = false;
+
 	void Update() {
-		if(Input.GetMouseButtonDown(0)) {
+		if(_listenForClickAction && Input.GetMouseButtonDown(0)) {
+			print ("halo");
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			if (Physics.Raycast (ray,out hit) && hit.collider.transform.GetInstanceID() == transform.GetInstanceID()) {
 				_myParentCharacter.GetComponent<PlayerRoute>().GoInThisDirection(_myParentField.transform.position);
 			}
+			_listenForClickAction = false;
 		}
 	}
+
 
 	public GameObject SetMyParentCharacterReference {
 		set {
 			_myParentCharacter = value;
+			_listenForClickAction = true;
 		}
 	}
 

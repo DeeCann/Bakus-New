@@ -12,7 +12,10 @@ public class Game : MonoBehaviour {
 	private static int _playersNumber = 5;
 	private static int _currentPlayerRound = 0;
 
+	private bool _showStartFruitsAmountPanel = false;
+
 	private static GameObject _startField;
+	private GameObject _HUDControler;
 
 	private enum fruitsNames {
 		Apple = 1,
@@ -25,6 +28,7 @@ public class Game : MonoBehaviour {
 
 	void Awake() {
 		_startField = GameObject.FindGameObjectWithTag(Tags.StartPoint);
+		_HUDControler = GameObject.FindGameObjectWithTag(Tags.HUDControler);
 
 		for (int i = 0; i < _playersNumber; i++) {
 
@@ -42,12 +46,12 @@ public class Game : MonoBehaviour {
 
 		_currentPlayerRound = 1;
 
-		_fruitsInGame.Add (fruitsNames.Apple.ToString(), 4);
-		_fruitsInGame.Add (fruitsNames.Raspberry.ToString(), 5);
-		_fruitsInGame.Add (fruitsNames.Blueberries.ToString(), 2);
-		_fruitsInGame.Add (fruitsNames.Blackberry.ToString(), 5);
-		_fruitsInGame.Add (fruitsNames.Peach.ToString(), 4);
-		_fruitsInGame.Add (fruitsNames.Strawberry.ToString(), 3);
+		_fruitsInGame.Add (fruitsNames.Apple.ToString(), Random.Range(10,20));
+		_fruitsInGame.Add (fruitsNames.Raspberry.ToString(), Random.Range(10,20));
+		_fruitsInGame.Add (fruitsNames.Blueberries.ToString(), Random.Range(10,20));
+		_fruitsInGame.Add (fruitsNames.Blackberry.ToString(), Random.Range(10,20));
+		_fruitsInGame.Add (fruitsNames.Peach.ToString(), Random.Range(10,20));
+		_fruitsInGame.Add (fruitsNames.Strawberry.ToString(), Random.Range(10,20));
 	}
 
 	void Start() {
@@ -56,6 +60,13 @@ public class Game : MonoBehaviour {
 			throw new UnityException("There is more tha one start");
 
 		Dice.CanDoDiceRoll = true;
+	}
+
+	void FixedUpdate() {
+		if (!_showStartFruitsAmountPanel) {
+			_HUDControler.GetComponent<HUD> ().ShowStartFruitsAmount ();
+			_showStartFruitsAmountPanel = true;
+		}
 	}
 
 	public static GameObject GetStartField {
