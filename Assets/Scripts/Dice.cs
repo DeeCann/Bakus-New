@@ -23,11 +23,11 @@ public class Dice : MonoBehaviour {
 	}
 
 	void Update () {
-		if(Input.GetMouseButtonDown(0) && !startToRoll && releaseDiceToRoll) {
+		if(Input.GetMouseButtonDown(0) && !startToRoll && releaseDiceToRoll && !trapsPanelControler.IsTrapPanelEnabled) {
 			Ray ray = diceCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			if(Physics.Raycast(ray,out hit)){
-				if(hit.collider.gameObject.GetInstanceID() == gameObject.GetInstanceID()){
+				if(hit.collider.gameObject.name == "DiceCollider"){
 					animation.Play();
 					rollingStartTime = Time.time;
 					startToRoll = true;
@@ -67,7 +67,7 @@ public class Dice : MonoBehaviour {
 	private Quaternion showRandomRollDice {
 		get{
 			_diceValue = Random.Range(1,7);
-			//_diceValue = 6;
+            //_diceValue = 2;
 			_newDiceThrow = true;
 			switch(_diceValue) {
 				case 1: return Quaternion.AngleAxis(180, Vector3.right);

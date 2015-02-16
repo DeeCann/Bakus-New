@@ -5,12 +5,15 @@ public class PinchZoom : MonoBehaviour {
 
 	private float clampZoomSpeed = 0.4f;
 	private float lerpZoomSpeed = 7.5f;
+    private float crossRoadsLerpZoomSpeed = 4.5f;
 
 	public static bool _restetZoom = false;
+    public static bool _zoomOutOnCrossroad = false;
 
-	private float normalFOV = 60;
+	private float normalFOV = 50;
 	private float minFOV = 30;
 	private float maxFOV = 90;
+    private float crossRoadsZoomOut = 90;
 
 	void Update()
 	{
@@ -19,6 +22,10 @@ public class PinchZoom : MonoBehaviour {
 			if(camera.fieldOfView == normalFOV)
 				_restetZoom = false;
 		}
+
+        if (_zoomOutOnCrossroad) {
+            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, crossRoadsZoomOut, Time.deltaTime * crossRoadsLerpZoomSpeed);
+        }
 
 		if (Input.touchCount == 2)
 		{
@@ -44,5 +51,10 @@ public class PinchZoom : MonoBehaviour {
 
 	public static void ResetZoom() {
 		_restetZoom = true;
+        _zoomOutOnCrossroad = false;
 	}
+
+    public static void ZoomOutForCrossroads() {
+        _zoomOutOnCrossroad = true;
+    }
 }

@@ -10,4 +10,6 @@ public class Tags : MonoBehaviour {
 	public const string PlayerContextMenu = "PlayerContextMenu";
 
 	public const string HUDControler = "HUDControler";
+
+    public const string FruitOnBoard = "FruitOnBoard";
 }

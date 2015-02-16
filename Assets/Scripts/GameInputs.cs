@@ -61,4 +61,14 @@ public class GameInputs : MonoBehaviour {
 //			return DiceValue;
 //		}
 //	}
+    public static bool isButtonDown = false;
+
+    void Update() {
+        if (Input.GetMouseButtonDown(0))
+            isButtonDown = true;
+
+        if (Input.GetMouseButtonUp(0))
+            isButtonDown = false;
+
+    }
 }

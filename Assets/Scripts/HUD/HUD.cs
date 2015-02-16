@@ -8,6 +8,8 @@ public class HUD : MonoBehaviour {
 	public Transform _playButtonSprite;
 	public Transform _cardsPanel;
 	public Transform _startFruitsAmountPanel;
+    public Transform _trapPanel;
+    public Transform _UpperPanel;
 
 	private bool _gameIsPaused = false;	
 
@@ -19,9 +21,9 @@ public class HUD : MonoBehaviour {
 
 	public void TimeControl() {
 		if (!_gameIsPaused) {
-			Time.timeScale = 0;
-			_pauseButtonSprite.gameObject.SetActive(true);
-			_playButtonSprite.gameObject.SetActive(false);
+            StartCoroutine(ShowUpperPanel());
+			_pauseButtonSprite.gameObject.SetActive(false);
+			_playButtonSprite.gameObject.SetActive(true);
 			_gameIsPaused = true;
 
 			return;
@@ -29,8 +31,9 @@ public class HUD : MonoBehaviour {
 
 		if (_gameIsPaused) {
 			Time.timeScale = 1;
-			_pauseButtonSprite.gameObject.SetActive(false);
-			_playButtonSprite.gameObject.SetActive(true);
+            StartCoroutine(HideUpperPanel());
+			_pauseButtonSprite.gameObject.SetActive(true);
+			_playButtonSprite.gameObject.SetActive(false);
 			_gameIsPaused = false;
 
 			return;
@@ -67,6 +70,13 @@ public class HUD : MonoBehaviour {
 		StartCoroutine (ShowCardsPanelCorutine ());
 		StartCoroutine (ShowVigniete ());
 	}
+
+    public void ShowTrapPanel() {
+        _vigniete.gameObject.SetActive(true);
+        _trapPanel.gameObject.SetActive(true);
+        StartCoroutine(ShowTrapPanelCorutine());
+        StartCoroutine(ShowVigniete());
+    }
 
 	IEnumerator ShowVigniete() {
 		Color vignieteColor = _vigniete.GetComponent<Image> ().color;
@@ -114,6 +124,20 @@ public class HUD : MonoBehaviour {
 		
 	}
 
+    IEnumerator ShowTrapPanelCorutine()
+    {
+        float trapPanelAplha = _trapPanel.GetComponent<CanvasGroup>().alpha;
+
+        while (trapPanelAplha < 0.99f)
+        {
+            trapPanelAplha += 0.16f;
+            _trapPanel.GetComponent<CanvasGroup>().alpha = trapPanelAplha;
+            yield return null;
+        }
+
+        _trapPanel.GetComponent<trapsPanelControler>().EnablePanel();
+    }
+
 	IEnumerator HideTipsPanelCorutine() {
 		float _tipsPanelAlpha = _startFruitsAmountPanel.GetComponent<CanvasGroup> ().alpha;
 		
@@ -125,5 +149,27 @@ public class HUD : MonoBehaviour {
 
 		_startFruitsAmountPanel.gameObject.SetActive (false);
 	}
+
+    IEnumerator ShowUpperPanel()
+    {
+        while (_UpperPanel.GetComponent<RectTransform>().anchoredPosition.y > 0.5f)
+        {
+            float _panelPosition = Mathf.Lerp(_UpperPanel.GetComponent<RectTransform>().anchoredPosition.y, 0, Time.deltaTime * 10);
+            _UpperPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(_UpperPanel.GetComponent<RectTransform>().anchoredPosition.x, _panelPosition);
+            yield return null;
+        }
+        Time.timeScale = 0;
+    }
+
+    IEnumerator HideUpperPanel()
+    {
+        while (_UpperPanel.GetComponent<RectTransform>().anchoredPosition.y < 129.5f)
+        {
+            float _panelPosition = Mathf.Lerp(_UpperPanel.GetComponent<RectTransform>().anchoredPosition.y, 130, Time.deltaTime * 10);
+            _UpperPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(_UpperPanel.GetComponent<RectTransform>().anchoredPosition.x, _panelPosition);
+            yield return null;
+        }
+        
+    }
 
 }

@@ -14,3 +14,4 @@ D:\Work\PC\Bakus\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 D:\Work\PC\Bakus\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 D:\Work\PC\Bakus\obj\Debug\Assembly-CSharp-firstpass.dll
 D:\Work\PC\Bakus\obj\Debug\Assembly-CSharp-firstpass.pdb
+D:\Work\PC\Bakus\Temp\bin\Debug\TDx.TDxInput.dll

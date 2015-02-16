@@ -64,6 +64,10 @@ public class PlayerRoute: MonoBehaviour {
 			GeneratePossibleWayFields();
 			FindNextFieldToGo();
 		}
+
+        get {
+            return _fieldsToGo;
+        }
 	}
 
 	public Vector3 MyNextField {
@@ -84,12 +88,14 @@ public class PlayerRoute: MonoBehaviour {
 		Vector2 nextPositionInXZ = new Vector2(_myNextFieldPosition.x, _myNextFieldPosition.z);
 
 		if(Vector3.Distance(currentPositionInXZ, nextPositionInXZ) < 0.05f && _hasNewFieldToMove) {
+
 			if(_imOnAShortCut) {
 				_imOnAShortCut = false;
 				return false;
 			}
-
+            
 			GeneratePossibleWayFields();
+
 			//print (_fieldsToGo);
 			/**
 			 * REACHED END OF ROUTE
@@ -180,6 +186,8 @@ public class PlayerRoute: MonoBehaviour {
 		}
 		SetNextMoveParams(directionPoint);
 		_isWaitingForCrossRoadDecision = false;
+
+        PinchZoom.ResetZoom();
 	}
 	
 	public int StartFieldSocket {
@@ -233,10 +241,13 @@ public class PlayerRoute: MonoBehaviour {
 					GetComponent<PlayerAnimations>().StartPickingRoadIdle();
 					
 					foreach(GameObject _field in _myPossibleFields) {
+      
 						if(_field != null) {
 							_field.GetComponentInChildren<CrossRoad>().ActivateRouteArrow( _myCurrentOccupiedField, gameObject );
 						}
 					}
+
+                    PinchZoom.ZoomOutForCrossroads();
 					_isWaitingForCrossRoadDecision = true;
 
 				} else {
@@ -294,7 +305,7 @@ public class PlayerRoute: MonoBehaviour {
 	}
 	
 	private bool IfIsNewFieldCollision(Collider someSollider) {
-		if(someSollider.transform.tag != Tags.Player && someSollider.transform.parent.tag.Contains(Tags.PathField))
+        if (someSollider.transform.tag != Tags.Player && someSollider.transform.tag != Tags.FruitOnBoard && someSollider.transform.parent.tag.Contains(Tags.PathField))
 			return true;
 		else
 			return false;

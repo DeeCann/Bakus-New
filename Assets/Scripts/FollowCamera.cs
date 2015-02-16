@@ -16,32 +16,35 @@ public class FollowCamera : MonoBehaviour {
 				player = character.transform;
 		}
 
-		relCameraPos = transform.position - player.position;
+        transform.position = player.position - new Vector3(1.957f, -1.4f, -0.72f);
+
+        relCameraPos = transform.position - player.position;
 		relCameraPosMag = relCameraPos.magnitude - 0.5f;
 	}
 	
 	void FixedUpdate ()
 	{
-		player = Game.GetCurrentPlayer.transform;
-		Vector3 standardPos = player.position + relCameraPos;
-		Vector3 abovePos = player.position + Vector3.up * relCameraPosMag;
+        player = Game.GetCurrentPlayer.transform;
+        
+        Vector3 standardPos = player.position + relCameraPos;
+        Vector3 abovePos = player.position + Vector3.up * relCameraPosMag;
 
-		Vector3[] checkPoints = new Vector3[5];
+        Vector3[] checkPoints = new Vector3[5];
 
-		checkPoints[0] = standardPos;
-		checkPoints[1] = Vector3.Lerp(standardPos, abovePos, 0.25f);
-		checkPoints[2] = Vector3.Lerp(standardPos, abovePos, 0.5f);
-		checkPoints[3] = Vector3.Lerp(standardPos, abovePos, 0.75f);
-		checkPoints[4] = abovePos;
+        checkPoints[0] = standardPos;
+        checkPoints[1] = Vector3.Lerp(standardPos, abovePos, 0.25f);
+        checkPoints[2] = Vector3.Lerp(standardPos, abovePos, 0.5f);
+        checkPoints[3] = Vector3.Lerp(standardPos, abovePos, 0.75f);
+        checkPoints[4] = abovePos;
 
-		for(int i = 0; i < checkPoints.Length; i++)
-		{
-			if(ViewingPosCheck(checkPoints[i]))
-				break;
-		}
+        for (int i = 0; i < checkPoints.Length; i++)
+        {
+            if (ViewingPosCheck(checkPoints[i]))
+                break;
+        }
 
-		transform.position = Vector3.Lerp(transform.position, newPos, 3 * Time.deltaTime);
-		SmoothLookAt();
+        transform.position = Vector3.Lerp(transform.position, newPos, 3 * Time.deltaTime);
+        SmoothLookAt();
 	}
 	
 	

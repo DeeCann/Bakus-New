@@ -1,13 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HUD\HUD.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game.cs">
     <Files>
-      <File FileName="Assets\Scripts\HUD\HUD.cs" Line="114" Column="26" />
-      <File FileName="Assets\Scripts\Player\PlayerMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CrossRoadArrow.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fields\SpecialMoveField.cs" Line="1" Column="1" />
-      <File FileName="d:\Work\PC\Bakus\Assets\Scripts\Player\CrossRoad.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game.cs" Line="132" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

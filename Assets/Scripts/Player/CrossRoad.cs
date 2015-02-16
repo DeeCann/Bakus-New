@@ -8,19 +8,20 @@ public class CrossRoad : MonoBehaviour {
 	public void ActivateRouteArrow(GameObject playerCurrentField, GameObject playerReference) {
 		transform.GetChild(0).GetComponent<CrossRoadArrow>().SetMyParentCharacterReference = playerReference;
 		transform.GetChild(0).GetComponent<CrossRoadArrow>().SetMyParentFieldReference = transform.parent.gameObject;
-
+        transform.GetChild(0).GetComponent<CrossRoadArrow>().CanListen = true;
 		transform.GetChild(0).renderer.enabled = true;
+
+
 		StartCoroutine("ShowTexture");
 		transform.GetChild(0).animation.PlayQueued("CrossRoadsArrowUp", QueueMode.CompleteOthers);
 		transform.GetChild(0).animation.PlayQueued("CrossRoadsArrowFlow", QueueMode.CompleteOthers);
 		transform.LookAt ( new Vector3(playerCurrentField.transform.position.x,transform.position.y, playerCurrentField.transform.position.z ), transform.parent.up);
-
-		//transform.rotation = Quaternion.LookRotation( transform.parent.position + playerCurrentField.transform.position, transform.parent.up );
 	}
 
 	public void DectivateRouteArrow() {
 		_deactivateShowTexture = true;
 		transform.GetChild(0).collider.enabled = false;
+        transform.GetChild(0).GetComponent<CrossRoadArrow>().CanListen = false;
 		StartCoroutine("HideTexture");
 	}
 
