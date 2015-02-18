@@ -46,6 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\JSON\JSONObject.cs" />
+     <Compile Include="Assets\JSON\JSONTemplates.cs" />
+     <Compile Include="Assets\JSON\VectorTemplates.cs" />
      <Compile Include="Assets\MeshBrush\Example_Runtime.cs" />
      <Compile Include="Assets\MeshBrush\MB_MeshCombineUtility.cs" />
      <Compile Include="Assets\MeshBrush\MeshBrush.cs" />
@@ -62,6 +65,7 @@
      <Compile Include="Assets\Scripts\Farm\MiniGameFarm.cs" />
      <Compile Include="Assets\Scripts\Farm\MiniGameFarmHUD.cs" />
      <Compile Include="Assets\Scripts\Fields\FieldSocket.cs" />
+     <Compile Include="Assets\Scripts\Fields\GoalField.cs" />
      <Compile Include="Assets\Scripts\Fields\NormalField.cs" />
      <Compile Include="Assets\Scripts\Fields\ShortcutField.cs" />
      <Compile Include="Assets\Scripts\Fields\SpecialMoveField.cs" />
@@ -88,6 +92,7 @@
      <Compile Include="Assets\Scripts\StartGuiControler.cs" />
      <Compile Include="Assets\Scripts\Tags.cs" />
      <Compile Include="Assets\Scripts\TouchRotate.cs" />
+     <Compile Include="Assets\Scripts\WebSerwis\Connect.cs" />
      <Compile Include="Assets\SpaceNavigator\Plugins\QuaternionExtensions.cs" />
      <Compile Include="Assets\SpaceNavigator\Plugins\SpaceNavigator.cs" />
      <Compile Include="Assets\SpaceNavigator\Plugins\SpaceNavigatorNoDevice.cs" />
@@ -108,6 +113,7 @@
      <None Include="Assets\ProCore\Prototype\About\changelog.txt" />
      <None Include="Assets\ProCore\Prototype\Shader\VertexBillboard.shader" />
      <None Include="Assets\ProCore\Prototype\Shader\DiffuseVertexColor.shader" />
+     <None Include="Assets\JSON\readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />

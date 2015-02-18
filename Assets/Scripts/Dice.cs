@@ -23,7 +23,7 @@ public class Dice : MonoBehaviour {
 	}
 
 	void Update () {
-		if(Input.GetMouseButtonDown(0) && !startToRoll && releaseDiceToRoll && !trapsPanelControler.IsTrapPanelEnabled) {
+		if(Input.GetMouseButtonDown(0) && !startToRoll && releaseDiceToRoll && !trapsPanelControler.IsTrapPanelEnabled && !cardPanelControler.IsCardPanelEnabled) {
 			Ray ray = diceCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			if(Physics.Raycast(ray,out hit)){

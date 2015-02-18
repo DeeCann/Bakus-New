@@ -16,7 +16,7 @@ public class FollowCamera : MonoBehaviour {
 				player = character.transform;
 		}
 
-        transform.position = player.position - new Vector3(1.957f, -1.4f, -0.72f);
+        transform.position = player.position -new Vector3(1.957f, -1.4f, -0.72f);
 
         relCameraPos = transform.position - player.position;
 		relCameraPosMag = relCameraPos.magnitude - 0.5f;
@@ -41,8 +41,11 @@ public class FollowCamera : MonoBehaviour {
         {
             if (ViewingPosCheck(checkPoints[i]))
                 break;
-        }
 
+           
+                newPos = standardPos;
+        }
+        
         transform.position = Vector3.Lerp(transform.position, newPos, 3 * Time.deltaTime);
         SmoothLookAt();
 	}
@@ -51,11 +54,14 @@ public class FollowCamera : MonoBehaviour {
 	bool ViewingPosCheck (Vector3 checkPos)
 	{
 		RaycastHit hit;
-
+        
 		if(Physics.Raycast(checkPos, player.position - checkPos, out hit, relCameraPosMag)) {
-			if(hit.transform != player && hit.transform.tag != Tags.PlayerContextMenu && hit.transform.tag != Tags.Player)
-				return false;
+            if (hit.transform != player && hit.transform.tag != Tags.PlayerContextMenu && hit.transform.tag != Tags.Player)
+            {
+                return false;
+            }
 		}
+        
 		newPos = checkPos;
 		return true;
 	}

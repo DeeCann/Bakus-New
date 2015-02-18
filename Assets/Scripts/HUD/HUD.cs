@@ -10,6 +10,7 @@ public class HUD : MonoBehaviour {
 	public Transform _startFruitsAmountPanel;
     public Transform _trapPanel;
     public Transform _UpperPanel;
+    public Transform _EndDemoPanel;
 
 	private bool _gameIsPaused = false;	
 
@@ -17,6 +18,11 @@ public class HUD : MonoBehaviour {
     {
 		Application.LoadLevel (0);
 		return;
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            TimeControl();
     }
 
 	public void TimeControl() {
@@ -76,6 +82,13 @@ public class HUD : MonoBehaviour {
         _trapPanel.gameObject.SetActive(true);
         StartCoroutine(ShowTrapPanelCorutine());
         StartCoroutine(ShowVigniete());
+    }
+
+    public void ShowEndDemoPanel()
+    {
+        _EndDemoPanel.gameObject.SetActive(true);
+        StartCoroutine(HideAllMenus());
+        StartCoroutine(ShowEndDemoVigniete());
     }
 
 	IEnumerator ShowVigniete() {
@@ -170,6 +183,28 @@ public class HUD : MonoBehaviour {
             yield return null;
         }
         
+    }
+
+    IEnumerator HideAllMenus() {
+        float hudAplha = _vigniete.transform.parent.GetComponent<CanvasGroup> ().alpha;
+
+        while (hudAplha > 0.01f)
+        {
+            hudAplha -= 0.16f;
+            _vigniete.transform.parent.GetComponent<CanvasGroup>().alpha = hudAplha;
+            yield return null;
+        }
+    }
+
+    IEnumerator ShowEndDemoVigniete()
+    {
+        Color endDemoColor = _EndDemoPanel.GetComponent<Image>().color;
+        while (endDemoColor.a < 0.99f)
+        {
+            endDemoColor.a += 0.16f;
+            _EndDemoPanel.GetComponent<Image>().color = endDemoColor;
+            yield return null;
+        }
     }
 
 }

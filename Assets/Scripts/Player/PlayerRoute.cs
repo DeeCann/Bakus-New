@@ -35,7 +35,11 @@ public class PlayerRoute: MonoBehaviour {
 		_myCurrentOccupiedField = Game.GetStartField;
 		
 	}
-	
+
+    void FixedUpdate() {
+        if (Game.GameHasEnded)
+            _fieldsToGo = 0;
+    }
 	void OnTriggerEnter(Collider collideObject) {
 		if(IfIsNewFieldCollision(collideObject)) {
 			_myLastOccupiedField = _myCurrentOccupiedField;

@@ -23,6 +23,8 @@ public class Game : MonoBehaviour {
     private Transform _fruitsContainer;
 	private GameObject _HUDControler;
 
+    private static bool _gameHasEnded = false;
+
 	private enum fruitsNames {
 		Apple = 1,
 		Raspberry = 2,
@@ -79,6 +81,10 @@ public class Game : MonoBehaviour {
 			_HUDControler.GetComponent<HUD> ().ShowStartFruitsAmount ();
 			_showStartFruitsAmountPanel = true;
 		}
+
+        if (_gameHasEnded) {
+            _HUDControler.GetComponent<HUD>().ShowEndDemoPanel();
+        }
 	}
 
 	public static GameObject GetStartField {
@@ -98,6 +104,16 @@ public class Game : MonoBehaviour {
         get
         {
             return Players[_currentPlayerRound - 1].name;
+        }
+    }
+
+    public static bool GameHasEnded {
+        set {
+            _gameHasEnded = value;
+        }
+
+        get {
+            return _gameHasEnded;
         }
     }
 
@@ -155,9 +171,17 @@ public class Game : MonoBehaviour {
         {
             for (int j = 0; j <= 30; j++)
             {
-                int randomTileNumber = Random.Range(0, _tiles.Count - 1);
+                int randomTileNumber = 0;
+                bool tileIsNotStartField = true;
+                while (tileIsNotStartField)
+                {
+                    randomTileNumber = Random.Range(0, _tiles.Count - 1);
+                    if (_tiles[randomTileNumber].tag != "StartPathField")
+                        tileIsNotStartField = false;
+                }
+               
                 Vector3 fruitPosition = _tiles[randomTileNumber].transform.position;
-                fruitPosition.y = 0.1f;
+                fruitPosition.y = fruitPosition.y + 0.1f;
                 GameObject fruit = (GameObject)Instantiate(Resources.Load("Prefabs/" + _onBoardFruitsNames[i]), fruitPosition, Quaternion.identity);
                 fruit.name = _onBoardFruitsNames[i];
                 fruit.transform.parent = _fruitsContainer;

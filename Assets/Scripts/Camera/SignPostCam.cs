@@ -8,17 +8,33 @@ public class SignPostCam : MonoBehaviour {
     private Vector3 _arrowDelta;
 
     void Start() {
-        foreach (GameObject field in GameObject.FindGameObjectsWithTag("EndPathField")) {
-            _endPaths.Add(new Vector3(field.transform.position.x, transform.position.y, field.transform.position.z));
-        }
+        foreach (GameObject field in GameObject.FindGameObjectsWithTag("EndPathField"))
+            _endPaths.Add(new Vector3(field.transform.position.x, 200, field.transform.position.z));
+
         _arrowDelta = arrow.transform.position - transform.position;
-        print(_endPaths[0]);
     }
 
     void Update() {
-        arrow.transform.position = new Vector3(Game.GetCurrentPlayer.transform.position.x, transform.position.y, Game.GetCurrentPlayer.transform.position.z);
-        //_arrowDelta = arrow.transform.position - transform.position;
-        transform.position = Vector3.Lerp(transform.position, transform.position - _arrowDelta, Time.deltaTime );
-        //transform.FindChild("Arrow").transform.localRotation = Quaternion.LookRotation(_endPaths[0] - transform.FindChild("Arrow").transform.position);
+        arrow.transform.position = new Vector3(Game.GetCurrentPlayer.transform.position.x, arrow.position.y, Game.GetCurrentPlayer.transform.position.z);
+       
+        transform.position = arrow.transform.position - _arrowDelta;
+        arrow.transform.LookAt(GetNearestEndPoint());
+    }
+
+    private Vector3 GetNearestEndPoint() {
+        float latestDistance = 10000;
+        Vector3 nearestPoint = Vector3.zero;
+
+        foreach (Vector3 endField in _endPaths)
+        {
+            float distanceToCurrentPoint = Vector3.Distance(endField, arrow.position);
+            if (latestDistance > distanceToCurrentPoint)
+            {
+                latestDistance = distanceToCurrentPoint;
+                nearestPoint = endField;
+            }
+
+        }
+        return nearestPoint;
     }
 }

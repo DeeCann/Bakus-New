@@ -10,6 +10,7 @@ public class cardPanelControler : MonoBehaviour {
 
     private bool _slidePanelsRight = false;
     private bool _slidePanelsLeft = false;
+    private static bool _cardPanelEnabled = false;
 
     private GameObject _slideLeftBtn;
     private GameObject _slideRightBtn;
@@ -20,6 +21,7 @@ public class cardPanelControler : MonoBehaviour {
         _slideRightBtn = transform.FindChild("SlideRight").gameObject;
         GenerateMyCards();
 
+        _cardPanelEnabled = true;
     }
 
     void FixedUpdate() {
@@ -80,6 +82,7 @@ public class cardPanelControler : MonoBehaviour {
 
     public void ClosePanel()
     {
+        _cardPanelEnabled = false;
         StartCoroutine(HideVigniete());
         StartCoroutine(HideCardsPanelCorutine());
     }
@@ -90,6 +93,14 @@ public class cardPanelControler : MonoBehaviour {
 
     public void SlideLeft() {
         _slidePanelsLeft = true;
+    }
+
+    public static bool IsCardPanelEnabled
+    {
+        get
+        {
+            return _cardPanelEnabled;
+        }
     }
 
 	IEnumerator HideVigniete() {

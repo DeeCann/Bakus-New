@@ -46,5 +46,7 @@ public class NormalField : MonoBehaviour {
 		Color textCurrentColor = transform.FindChild("Text").guiText.color;
 		textCurrentColor.a = (Mathf.Sin(Time.time * 4) + 1.0f) / 2.0f;
 		transform.FindChild("Text").guiText.color = textCurrentColor;
+
+
 	}
 }

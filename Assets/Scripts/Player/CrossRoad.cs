@@ -6,6 +6,7 @@ public class CrossRoad : MonoBehaviour {
 	private bool _deactivateShowTexture = false;
 
 	public void ActivateRouteArrow(GameObject playerCurrentField, GameObject playerReference) {
+        GameObject.FindGameObjectWithTag("FinishArrowCamera").GetComponent<Camera>().enabled = true;
 		transform.GetChild(0).GetComponent<CrossRoadArrow>().SetMyParentCharacterReference = playerReference;
 		transform.GetChild(0).GetComponent<CrossRoadArrow>().SetMyParentFieldReference = transform.parent.gameObject;
         transform.GetChild(0).GetComponent<CrossRoadArrow>().CanListen = true;
@@ -19,6 +20,7 @@ public class CrossRoad : MonoBehaviour {
 	}
 
 	public void DectivateRouteArrow() {
+        GameObject.FindGameObjectWithTag("FinishArrowCamera").GetComponent<Camera>().enabled = false;
 		_deactivateShowTexture = true;
 		transform.GetChild(0).collider.enabled = false;
         transform.GetChild(0).GetComponent<CrossRoadArrow>().CanListen = false;

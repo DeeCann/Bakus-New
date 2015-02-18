@@ -73,5 +73,7 @@ public class SpecialMoveField : MonoBehaviour {
 		Color textCurrentColor = transform.FindChild("Text").guiText.color;
 		textCurrentColor.a = (Mathf.Sin(Time.time * 4) + 1.0f) / 2.0f;
 		transform.FindChild("Text").guiText.color = textCurrentColor;
+        
+        transform.FindChild("Text").guiText.fontSize =  System.Convert.ToInt16 (40 - Vector3.Distance(Camera.main.transform.position, transform.position) * 3);
 	}
 }
