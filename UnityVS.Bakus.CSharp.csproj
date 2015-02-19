@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\GameInputs.cs" />
     <Compile Include="Assets\Scripts\HUD\FruitsPanel.cs" />
     <Compile Include="Assets\Scripts\HUD\HUD.cs" />
+    <Compile Include="Assets\Scripts\HUD\InsertCodePanelControler.cs" />
     <Compile Include="Assets\Scripts\HUD\cardPanelControler.cs" />
     <Compile Include="Assets\Scripts\HUD\trapsPanelControler.cs" />
     <Compile Include="Assets\Scripts\HighTrees\BranchMove.cs" />
@@ -227,6 +228,8 @@
     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
+    <None Include="Assets\trampoliny\anim\mask.shader" />
+    <None Include="Assets\trampoliny\dupa.shader" />
     <None Include="Assets\ProCore\Prototype\Classes\ProBuilderCore.dll" />
     <None Include="Assets\ProCore\Prototype\Classes\ProBuilderMeshOps.dll" />
     <None Include="Assets\ProCore\Shared\Code\ProCore.dll" />

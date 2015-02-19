@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\GameInputs.cs" />
      <Compile Include="Assets\Scripts\HUD\FruitsPanel.cs" />
      <Compile Include="Assets\Scripts\HUD\HUD.cs" />
+     <Compile Include="Assets\Scripts\HUD\InsertCodePanelControler.cs" />
      <Compile Include="Assets\Scripts\HUD\cardPanelControler.cs" />
      <Compile Include="Assets\Scripts\HUD\trapsPanelControler.cs" />
      <Compile Include="Assets\Scripts\HighTrees\BranchMove.cs" />
@@ -135,6 +136,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\trampoliny\anim\mask.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
@@ -157,6 +159,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\trampoliny\dupa.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />

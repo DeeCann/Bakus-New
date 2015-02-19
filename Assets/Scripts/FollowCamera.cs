@@ -16,7 +16,7 @@ public class FollowCamera : MonoBehaviour {
 				player = character.transform;
 		}
 
-        transform.position = player.position -new Vector3(1.957f, -1.4f, -0.72f);
+        transform.position = player.position -new Vector3(1.957f, -1.8f, -0.72f);
 
         relCameraPos = transform.position - player.position;
 		relCameraPosMag = relCameraPos.magnitude - 0.5f;

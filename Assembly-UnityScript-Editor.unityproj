@@ -93,6 +93,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\trampoliny\anim\mask.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
@@ -115,6 +116,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\trampoliny\dupa.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
@@ -186,9 +188,6 @@
  <Reference Include="TDx.TDxInput">
  <HintPath>D:/Work/PC/Bakus/Assets/SpaceNavigator/Plugins/TDx.TDxInput.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
  <HintPath>D:/Work/PC/Bakus/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
  </Reference>
@@ -198,6 +197,9 @@
  <Reference Include="UnityVS.VersionSpecific">
  <HintPath>D:/Work/PC/Bakus/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
@@ -206,6 +208,8 @@
       <Project>{70DDBF18-C80B-B295-8632-C6A8C16AAF67}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{F8E26348-79B9-7012-7BF2-E8F0CAB8F98F}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{67500BAD-446D-2D55-36F3-9ACA18E23284}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

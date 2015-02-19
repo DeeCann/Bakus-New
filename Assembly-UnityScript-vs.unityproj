@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,7 +46,32 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PRJ_SpellEffectsB\_Scripts\FireParticles4.js" />
+     <Compile Include="Assets\trampoliny\scripts\2_inst.js" />
+     <Compile Include="Assets\trampoliny\scripts\3_inst.js" />
+     <Compile Include="Assets\trampoliny\scripts\NewBehaviourScript.js" />
+     <Compile Include="Assets\trampoliny\scripts\box.js" />
+     <Compile Include="Assets\trampoliny\scripts\choos_fruit.js" />
+     <Compile Include="Assets\trampoliny\scripts\doubleclick.js" />
+     <Compile Include="Assets\trampoliny\scripts\drag.js" />
+     <Compile Include="Assets\trampoliny\scripts\draw_symbol.js" />
+     <Compile Include="Assets\trampoliny\scripts\fruitgenerator.js" />
+     <Compile Include="Assets\trampoliny\scripts\how.js" />
+     <Compile Include="Assets\trampoliny\scripts\inbox_sound.js" />
+     <Compile Include="Assets\trampoliny\scripts\lejek_sound.js" />
+     <Compile Include="Assets\trampoliny\scripts\level.js" />
+     <Compile Include="Assets\trampoliny\scripts\next.js" />
+     <Compile Include="Assets\trampoliny\scripts\next_fruits.js" />
+     <Compile Include="Assets\trampoliny\scripts\obstacles.js" />
+     <Compile Include="Assets\trampoliny\scripts\outbox_sound.js" />
+     <Compile Include="Assets\trampoliny\scripts\score.js" />
+     <Compile Include="Assets\trampoliny\scripts\score_count.js" />
+     <Compile Include="Assets\trampoliny\scripts\show_symbol.js" />
+     <Compile Include="Assets\trampoliny\scripts\sorting.js" />
+     <Compile Include="Assets\trampoliny\scripts\summary.js" />
+     <Compile Include="Assets\trampoliny\scripts\timer.js" />
+     <Compile Include="Assets\trampoliny\scripts\tramp_sound.js" />
+     <Compile Include="Assets\trampoliny\scripts\transparency.js" />
+     <Compile Include="Assets\trampoliny\scripts\unfreeze.js" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\MeshBrush\Documentation.txt" />
@@ -59,6 +84,7 @@
      <None Include="Assets\ProCore\Prototype\About\changelog.txt" />
      <None Include="Assets\ProCore\Prototype\Shader\VertexBillboard.shader" />
      <None Include="Assets\ProCore\Prototype\Shader\DiffuseVertexColor.shader" />
+     <None Include="Assets\JSON\readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
@@ -80,6 +106,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\trampoliny\anim\mask.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
@@ -102,6 +129,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\trampoliny\dupa.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />

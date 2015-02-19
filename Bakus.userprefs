@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\trampoliny\scripts\doubleclick.js">
     <Files>
-      <File FileName="Assets\Scripts\Game.cs" Line="132" Column="1" />
+      <File FileName="Assets\trampoliny\scripts\doubleclick.js" Line="35" Column="2" />
+      <File FileName="Assets\Scripts\Game.cs" Line="157" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

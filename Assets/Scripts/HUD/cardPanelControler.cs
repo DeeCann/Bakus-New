@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class cardPanelControler : MonoBehaviour {
 	public Transform _vigniete;
+    public Transform _codePanel;
     private Transform _cardsContainer;
     private int _currentCardPanelsScreen = 1;
     private int _totalCardPanel = 0;
@@ -87,6 +88,8 @@ public class cardPanelControler : MonoBehaviour {
         StartCoroutine(HideCardsPanelCorutine());
     }
 
+    
+
     public void SlideRight() {
         _slidePanelsRight = true;
     }
@@ -103,7 +106,17 @@ public class cardPanelControler : MonoBehaviour {
         }
     }
 
-	IEnumerator HideVigniete() {
+    public void OpenInsertCodePanel() {
+        StartCoroutine(HideCardsPanelCorutine());
+        _codePanel.gameObject.SetActive(true);
+        OpenCodePanel();
+    }
+
+    public void OpenCodePanel() {
+        StartCoroutine(ShowInsertCodeCorutine());
+    }
+	
+    IEnumerator HideVigniete() {
 		Color vignieteColor = _vigniete.GetComponent<Image> ().color;
 		while (vignieteColor.a > 0.1f) {
 			vignieteColor.a -= 0.2f;
@@ -117,15 +130,47 @@ public class cardPanelControler : MonoBehaviour {
 		gameObject.SetActive (false);
 	}
 
-	IEnumerator HideCardsPanelCorutine() {
-		float cardsPanelAplha = gameObject.GetComponent<CanvasGroup> ().alpha;
-		
-		while (cardsPanelAplha > 0.1f) {
-			cardsPanelAplha -= 1.6f;
-			gameObject.GetComponent<CanvasGroup>().alpha = cardsPanelAplha;
-			yield return null;
-		}
-	}
+    IEnumerator ShowCardsPanelCorutine()
+    {
+        float cardsPanelAplha = gameObject.GetComponent<CanvasGroup>().alpha;
+
+        while (cardsPanelAplha < 0.99f)
+        {
+            cardsPanelAplha += 1.6f;
+            gameObject.GetComponent<CanvasGroup>().alpha = cardsPanelAplha;
+            yield return null;
+        }
+    }
+
+	
+
+    IEnumerator ShowInsertCodeCorutine()
+    {
+        float insertCodePanelAplha = _codePanel.GetComponent<CanvasGroup>().alpha;
+
+        while (insertCodePanelAplha < 0.99f)
+        {
+            insertCodePanelAplha += 0.16f;
+            _codePanel.GetComponent<CanvasGroup>().alpha = insertCodePanelAplha;
+            yield return null;
+        }
+    }
+
+    IEnumerator HideCardsPanelCorutine()
+    {
+        float cardsPanelAplha = gameObject.GetComponent<CanvasGroup>().alpha;
+
+        while (cardsPanelAplha > 0.1f)
+        {
+            cardsPanelAplha -= 0.6f;
+            gameObject.GetComponent<CanvasGroup>().alpha = cardsPanelAplha;
+            yield return null;
+        }
+
+        //gameObject.SetActive(false);
+    }
+
+   
 
     private void SlideOutLeft(float currentPanel)
     {

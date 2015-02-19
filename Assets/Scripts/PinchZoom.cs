@@ -5,7 +5,7 @@ public class PinchZoom : MonoBehaviour {
 
 	private float clampZoomSpeed = 0.4f;
 	private float lerpZoomSpeed = 7.5f;
-    private float crossRoadsLerpZoomSpeed = 4.5f;
+    private float crossRoadsLerpZoomSpeed = 2.5f;
 
 	public static bool _restetZoom = false;
     public static bool _zoomOutOnCrossroad = false;
@@ -13,7 +13,7 @@ public class PinchZoom : MonoBehaviour {
 	private float normalFOV = 50;
 	private float minFOV = 30;
 	private float maxFOV = 90;
-    private float crossRoadsZoomOut = 90;
+    private float crossRoadsZoomOut = 75;
 
 	void Update()
 	{
