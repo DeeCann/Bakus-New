@@ -10,10 +10,10 @@ public class PinchZoom : MonoBehaviour {
 	public static bool _restetZoom = false;
     public static bool _zoomOutOnCrossroad = false;
 
-	private float normalFOV = 50;
+	private float normalFOV = 40;
 	private float minFOV = 30;
 	private float maxFOV = 90;
-    private float crossRoadsZoomOut = 90;
+    private float crossRoadsZoomOut = 40;
 
 	void Update()
 	{
