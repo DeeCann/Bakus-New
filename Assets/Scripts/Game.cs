@@ -35,7 +35,7 @@ public class Game : MonoBehaviour {
 	}
 
 	void Awake() {
-		_startField = GameObject.FindGameObjectsWithTag(Tags.StartPoint)[Random.Range(1,2)];
+		_startField = GameObject.FindGameObjectsWithTag(Tags.StartPoint)[Random.Range(0,3)];
 		_HUDControler = GameObject.FindGameObjectWithTag(Tags.HUDControler);
 
 		for (int i = 0; i < _playersNumber; i++) {

@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Farm\MiniGameFarmHUD.cs" />
     <Compile Include="Assets\Scripts\Fields\FieldSocket.cs" />
     <Compile Include="Assets\Scripts\Fields\GoalField.cs" />
+    <Compile Include="Assets\Scripts\Fields\MinigameField.cs" />
     <Compile Include="Assets\Scripts\Fields\NormalField.cs" />
     <Compile Include="Assets\Scripts\Fields\ShortcutField.cs" />
     <Compile Include="Assets\Scripts\Fields\SpecialMoveField.cs" />

@@ -1,40 +1,22 @@
 Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-4-92
+Pipe name: \\.\pipe\UnityShaderCompiler-4-10068
 Cmd: getPlatforms
 Cmd: compileSnippet
-  api=1 type=1 insize=1191 outsize=361 kw= ok=1
+  api=1 type=1 insize=5451 outsize=111 kw= ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=3153 outsize=328 kw= ok=1
+  api=0 type=1 insize=5463 outsize=942 kw= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=3198 outsize=2436 kw= ok=1
+  api=0 type=1 insize=5464 outsize=942 kw= ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=5451 outsize=328 kw= ok=1
+  api=8 type=1 insize=5468 outsize=2885 kw= ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=5459 outsize=302 kw= ok=1
+  api=0 type=1 insize=5470 outsize=726 kw= ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=5463 outsize=468 kw= ok=1
+  api=8 type=1 insize=2934 outsize=3470 kw= ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=5468 outsize=412 kw= ok=1
+  api=8 type=1 insize=2924 outsize=2608 kw= ok=1
 Cmd: compileSnippet
-  api=8 type=0 insize=5470 outsize=2625 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=3836 outsize=330 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=3844 outsize=719 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=3842 outsize=638 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=3844 outsize=678 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=3834 outsize=270 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4429 outsize=572 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_ON DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=2380 outsize=592 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4121 outsize=887 kw=LIGHTMAP_ON DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=4121 outsize=390 kw=LIGHTMAP_ON DIRLIGHTMAP_ON HDR_LIGHT_PREPASS_ON ok=1
+  api=1 type=1 insize=2936 outsize=553 kw= ok=1
 Unhandled exception: Readfile from pipe failed. GLE=Potok zosta³ zakoñczony.
 
 

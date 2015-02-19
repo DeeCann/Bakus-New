@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class InsertCodePanelControler : MonoBehaviour {
     public Transform _cardsPanel;
     public Transform _codeField;
+    public Transform _messageText;
 
     public void CloseInsertCardPanel()
     {
@@ -13,11 +14,12 @@ public class InsertCodePanelControler : MonoBehaviour {
     }
 
     public void CheckCode() {
-        print(_codeField.GetComponent<Text>().text);
+        _messageText.GetComponent<Text>().text = "Kod niepoprawny.\nSpróbuj ponownie później";
     }
 
     IEnumerator HideInsertCodeCorutine()
     {
+        _codeField.parent.GetComponent<InputField>().text = "";
         float insertCodePanelAplha = GetComponent<CanvasGroup>().alpha;
 
         while (insertCodePanelAplha > 0.1f)
@@ -26,7 +28,8 @@ public class InsertCodePanelControler : MonoBehaviour {
             GetComponent<CanvasGroup>().alpha = insertCodePanelAplha;
             yield return null;
         }
-
+       
+        _messageText.GetComponent<Text>().text = "";
         gameObject.SetActive(false);
     }
 

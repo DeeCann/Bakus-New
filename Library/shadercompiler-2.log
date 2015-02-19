@@ -1,43 +1,21 @@
 Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-2-10484
+Pipe name: \\.\pipe\UnityShaderCompiler-2-7552
 Cmd: getPlatforms
 Cmd: compileSnippet
-  api=8 type=0 insize=1191 outsize=2023 kw= ok=1
+  api=0 type=0 insize=5451 outsize=328 kw= ok=1
 Cmd: compileSnippet
-  api=8 type=0 insize=3154 outsize=1438 kw= ok=1
+  api=8 type=0 insize=5459 outsize=2259 kw= ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=3198 outsize=328 kw= ok=1
+  api=0 type=0 insize=5464 outsize=463 kw= ok=1
 Cmd: compileSnippet
-  api=8 type=1 insize=3198 outsize=4753 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=5451 outsize=1958 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=5451 outsize=1235 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=5463 outsize=2088 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=5463 outsize=2755 kw= ok=1
+  api=8 type=0 insize=5468 outsize=2625 kw= ok=1
 Cmd: compileSnippet
   api=0 type=0 insize=5470 outsize=708 kw= ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=3836 outsize=335 kw= ok=1
+  api=0 type=0 insize=2925 outsize=521 kw= ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=3844 outsize=170 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=3844 outsize=1958 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=3834 outsize=1298 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=3834 outsize=1390 kw= ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=624 outsize=66 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4429 outsize=1725 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF VERTEXLIGHT_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=4429 outsize=327 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=2380 outsize=849 kw=POINT_COOKIE ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4121 outsize=937 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=4121 outsize=440 kw=LIGHTMAP_ON DIRLIGHTMAP_ON HDR_LIGHT_PREPASS_OFF ok=1
+  api=1 type=0 insize=2924 outsize=437 kw= ok=1
+Unhandled exception: Readfile from pipe failed. GLE=Potok zosta³ zakoñczony.
+
+
+Quitting shader compiler process
